@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ProfileCard({name, photo, position, bio}) {
   return (
-    <div className="container">
+    <div className="profileContainer">
       <div >
         <img src={photo} alt="" className="imageContainer" ></img>
       </div>

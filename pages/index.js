@@ -21,7 +21,7 @@ export async function getStaticProps() {
     path.join(configDirectory, "test.md"), "utf8"
   )
 
-  const parsedContent = marked.parse(fileContent)
+  // const parsedContent = marked.parse(fileContent)
   const { data: frontmatter, content } = matter(fileContent)
 
   return {

@@ -28,7 +28,7 @@ a {
 }
 
 
-.container{
+.profileContainer, .featureContainer {
   display: flex;
 
   align-items: center;
@@ -36,15 +36,119 @@ a {
   max-width: 1000px;
   border-radius: 15px;
   margin: 4rem;
+  padding: 2rem;
 }
+
+.abilityContainer{
+  display: flex;
+  justify-content: space-between;
+  max-height: 150px;
+  max-width: 500px;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid black;
+  margin: 4rem;
+  border-radius: 20px;
+}
+
+
+
+.abilitiesContainer{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .imageContainer{
   width: 500px;
   height: 400px;
   border-radius: 50%;
   margin: 2rem;
+
+}
+
+
+
+.abilityImage{
+  max-height: 100px;
+  margin-left: 1rem;
+  border-radius: 10px;
+
+}
+
+.featureImageContainer{
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  margin: 2rem;
 }
 
 .profession{
   color:lightslategray;
+}
+
+.imageGrid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0px;
+  grid-auto-rows: minmax(100px, auto);
+  border: 2px solid black;
+  max-width: 700px;
+  margin: 4rem;
+  border-radius: 15px;
+  
+}
+
+.one{
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  
+}
+
+.one img{
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.two{
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+
+
+}
+
+.two img{
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.three{
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+
+}
+
+.three img{
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.four{
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+
+
+}
+
+.four img{
+  max-height: 250px;
+  max-width: 250px;
 }
