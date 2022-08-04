@@ -31,10 +31,10 @@ The user will write the page's content in markdown format. In this case, in orde
 During the implementation so far, I have faced the following problems:
 
 - how to make a stream of questions that accept user input on the command line
---> using rl.question module of Node
+-- using rl.question module of Node
 
 - how to use the user input in the program
---> the input was not accessible outside the function that promted the command line questions. The solution followed was to save the user input in a text file at the time of retrieval. Used readFile and writeFile modules from Node to read and write contents in the text file. Parsed to JSON format after reading in order to be assign the values to variables in the program. Created the variables holding the user values in getStaticProps() function of Nextjs.
+-- the input was not accessible outside the function that promted the command line questions. The solution followed was to save the user input in a text file at the time of retrieval. Used readFile and writeFile modules from Node to read and write contents in the text file. Parsed to JSON format after reading in order to be assign the values to variables in the program. Created the variables holding the user values in getStaticProps() function of Nextjs.
 
 - how to change the global css values in order to apply the styling changes to all pages of the project
 --> had to use custom variables in CSS and set them to the user input using the React useEffect hook.
