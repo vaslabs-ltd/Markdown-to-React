@@ -39,11 +39,15 @@ During the implementation so far, I have faced the following problems:
 - how to change the global css values in order to apply the styling changes to all pages of the project
 --> had to use custom variables in CSS and set them to the user input using the React useEffect hook.
 
+- how to make the custom styling also apply to the MDX file, because useEffect cannot be used inside such file.
+--> The MDX file is treated as a page in Nextjs project. However, a single MDX file can be imported in another file as a React component. Thus, the MDX file is incorporated as a component in a normal Nextjs "page" where the custom styling works correctly.
+
 ## What's next
 
  - The user can provide custom styling from a UI component that maybe has some dropdowns with custom properties
  - Implement CLI command to first run the command to open the stream of questions to the user and after the user provides all the values then the "npm run dev" executes.
  - Maybe add more customizations
+ - Add a Layout component to have a consistent structure in the website
 
 
 
