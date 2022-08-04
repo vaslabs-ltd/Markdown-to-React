@@ -1,18 +1,41 @@
-import Test from '../components/ProfileCard'
-
-import React from 'react'
+import React, { useEffect } from 'react'
 import fs from "fs"
 import path from 'path'
 import {marked} from "marked"
 import matter from "gray-matter"
-import {parsedData} from "./customProps"
+import ProfileCard from '../components/ProfileCard'
+import Feature from "../components/Feature"
 
 
 
 
-export default function Home({frontmatter: {name, component, position, photo}, content, textColor}) {
+export default function Home({frontmatter: {name, position, photo}, text_color, background_color, comp_color, comp_text_color}) {
+
+  useEffect(() => {
+    const color = getComputedStyle(document.documentElement).getPropertyValue('--text_color');
+    console.log(color);
+
+ 
+      document.documentElement.style.setProperty('--text_color', text_color);
+      document.documentElement.style.setProperty('--comp_color', comp_color);
+      document.documentElement.style.setProperty('--background_color', background_color);
+      document.documentElement.style.setProperty('--comp_text_color', comp_text_color);
+
+
+  },[])
+
+
+
+
+
   return (
-    <Test name={name} position={position} bio={textColor} photo={photo}/>
+    <div style={{background: background_color}}>
+    <ProfileCard name={name} position={position} bio={text_color} photo={photo} text_color={text_color} background_color={background_color} comp_color={comp_color}/>
+    <ProfileCard name={name} position={position} bio={text_color} photo={photo} text_color={text_color} background_color={background_color} comp_color={comp_color}/>
+    <Feature text_color={text_color} title={name} />
+
+    </div>
+
   )
 }
 
@@ -29,9 +52,13 @@ export async function getStaticProps() {
  
 
   const parsedData = JSON.parse(propsInFile)
-  console.log(parsedData.textColor)
-  const textColor = parsedData.textColor
+  const text_color = parsedData.textColor
+  const background_color = parsedData.bgColor
+  const comp_color = parsedData.componentBg
+  const comp_text_color = parsedData.componentText
 
+
+  
  
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,8 +76,18 @@ export async function getStaticProps() {
     props: {
       frontmatter,
       content,
-      textColor
+      text_color,
+      background_color,
+      comp_color, 
+      comp_text_color
    
     }, 
   }
 }
+
+
+
+
+
+
+

@@ -8,16 +8,18 @@ let text;
 rl.question('Please select a color for the text: ', (textColor) => {
             rl.question("Please select a background color for your website: ", (bgColor) => {
                rl.question("Please select a background color for the components: ", (componentBg) => {
+                rl.question("Please select a text color for the components: ", (componentText) => {
                                      console.log("")
                    console.log("*** YOUR CUSTOMIZATIONS: ***")
                    console.log("====================================================")
-                   console.log(`Thank you! \nYour text will be: ${textColor}\nYour background color will be: ${bgColor} \nYour components background color will be: ${componentBg}`);
+                   console.log(`Thank you! \nYour text will be: ${textColor}\nYour background color will be: ${bgColor} \nYour components background color will be: ${componentBg} \nYour component's text color will be ${componentText}`);
                    console.log("====================================================")
                    console.log("")  
                    const customProps = {
                     textColor,
                     bgColor,
-                    componentBg
+                    componentBg,
+                    componentText
                    };
                    const myProps = JSON.stringify(customProps);
                    fs.writeFile('./customProps.txt', myProps, err => {
@@ -26,7 +28,11 @@ rl.question('Please select a color for the text: ', (textColor) => {
                     }
                     // file written successfully
                   });
+
                    rl.close();
+                  
+                })
+                
 
                   
                })

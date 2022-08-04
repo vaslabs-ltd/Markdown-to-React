@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Feature({title, photo, content}) {
+export default function Feature({title, photo, content, text_color}) {
   return (
-    <div className='featureContainer'>
+    <div className='featureContainer' style={{color: text_color}}>
       
         <div>
             <h3>{title}</h3>
