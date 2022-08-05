@@ -1,1 +1,1 @@
-{"textColor":"white","bgColor":"black","componentBg":"grey","componentText":"black"}
+{"textColor":"red","bgColor":"blue","componentBg":"white","componentText":"yellow"}
