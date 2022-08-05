@@ -54,7 +54,7 @@ During the implementation so far, I have faced the following problems:
 
 - had to use custom variables in CSS and set them to the user input using the React useEffect hook.
 
-`useEffect(() => {
+`   useEffect(() => {
         const color = getComputedStyle(document.documentElement).getPropertyValue('--variable');
         console.log(color);
     
@@ -63,7 +63,7 @@ During the implementation so far, I have faced the following problems:
         document.documentElement.style.setProperty('--comp_color', comp_color);
         document.documentElement.style.setProperty('--background_color', background_color);
         document.documentElement.style.setProperty('--comp_text_color', comp_text_color);    
-},[]) `
+    },[]) `
 
 ### Problem
 
