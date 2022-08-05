@@ -16,15 +16,9 @@ export default function CustomProps({text_color, background_color, comp_color, c
           document.documentElement.style.setProperty('--text_color', text_color);
         document.documentElement.style.setProperty('--comp_color', comp_color);
       document.documentElement.style.setProperty('--background_color', background_color);
-      document.documentElement.style.setProperty('--comp_text_color', comp_text_color);
-
-
-
-    
-      
-     
-      
+      document.documentElement.style.setProperty('--comp_text_color', comp_text_color);    
       },[])
+      
   return (
     <div>
 
