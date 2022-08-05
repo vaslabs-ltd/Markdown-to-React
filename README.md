@@ -54,7 +54,8 @@ During the implementation so far, I have faced the following problems:
 
 - had to use custom variables in CSS and set them to the user input using the React useEffect hook.
 
-`           useEffect(() => {
+`
+           useEffect(() => {
                 const color = getComputedStyle(document.documentElement).getPropertyValue('--variable');
                 console.log(color);
     
