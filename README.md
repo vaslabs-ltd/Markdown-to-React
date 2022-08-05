@@ -68,6 +68,8 @@ During the implementation so far, I have faced the following problems:
  - Implement CLI command to first run the command to open the stream of questions to the user and after the user provides all the values then the "npm run dev" executes.
  - Maybe add more customizations
  - Add a Layout component to have a consistent structure in the website
+ - Add some kind of restrictions on the values that a user can provide in the CLI. E.g. the color values must be names that are recognizable by CSS and not some custom words like "cucumber green"
+ - The user can save a set of given custom styling props as a theme for reusability.
 
 
 
