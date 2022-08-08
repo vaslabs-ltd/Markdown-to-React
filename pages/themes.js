@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { themes } from "../my-themes"
 import { useEffect } from 'react';
 
+
 export default function Themes(custom_themes) {
 
     const [selected, setSelected] = useState(null)
@@ -45,6 +46,47 @@ export default function Themes(custom_themes) {
    
       },[selected])
 
+      const handleSave = (e) => {
+        e.preventDefault();
+
+       
+        function watchColorPicker(event) {
+           bgColorPicker.value = event.target.value;
+        }
+
+        const themeName = document.getElementById("themeName").value;
+
+        const bgColorPicker = document.getElementById("backgroundColor");
+        const textColorPicker = document.getElementById("textColor");
+        const componentColorPicker = document.getElementById("componentColor");
+        const compTextColorPicker = document.getElementById("componentTextColor");
+
+        bgColorPicker.addEventListener("change", watchColorPicker, false);
+
+
+          const selectedBgColor = bgColorPicker.value;
+        const selectedTextColor = textColorPicker.value;
+        const selectedComponentColor = componentColorPicker.value;
+        const selectedComponentTextColor = compTextColorPicker.value;
+
+        const themesArray = themes;
+        console.log(themesArray);
+
+        const customTheme = {
+          theme: themeName,
+          textColor: selectedTextColor,
+          bgColor: selectedBgColor,
+          componentBg: selectedComponentColor,
+          componentText: selectedComponentTextColor
+        }
+        themesArray.push(customTheme);
+        console.log(themesArray);
+
+       
+
+
+        }
+        
       
    
   return (
@@ -73,6 +115,37 @@ export default function Themes(custom_themes) {
                 <h2>You have chosen the {selected} theme. Enjoy!</h2> : null
             
         }
+
+        <form className='createTheme' onSubmit={handleSave}>
+          <h1>Create your own</h1>
+          <h2>Enter a name for your theme</h2>
+          <input type="text" className='themeName' id="themeName" placeholder="Enter name..."></input>
+          <h2>Choose your preferred colors</h2>
+          <div className='chooseProps'>
+
+            <div className='chooseColor'>
+              <label htmlFor="backgroundColor">Choose background color:</label>
+              <input type="color" id="backgroundColor"   />
+            </div>
+            <div className='chooseColor'>
+              <label htmlFor="textColor">Choose text color:</label>
+              <input type="color" id="textColor" />
+            </div>
+            <div className='chooseColor'>
+              <label htmlFor="componentColor">Choose component background color:</label>
+              <input type="color" id="componentColor"  />
+            </div>
+            <div className='chooseColor'>
+              <label htmlFor="componentTextColor">Choose component text color:</label>
+              <input type="color" id="componentTextColor"  />
+            </div>
+          </div>
+          <button className='saveTheme' type='submit' value="Submit">Save theme</button>
+        </form>
+
+
+
+        {/* onclick will trigger function that will save given inputs to the mythemes.js file. input will be saved as an object in the array. will use writefile method of node in order to write in the file */}
      
     </div>
   )
@@ -85,10 +158,27 @@ export default function Themes(custom_themes) {
 export async function getStaticProps() {
 
     const custom_themes = themes;
+
+    // const rootDirectory = path.resolve(process.cwd(), "./");
+  
+  
+    // const themesinFile = fs.readFileSync(
+    //   path.join(rootDirectory, "my-themes.js"), "utf8"
+    // )
+
+    // fs.writeFile("../my-themes.js", themesArray, (err) => {
+    //   if(err)
+    //   console.log(err)
+    //   else
+    //   console.log("saved!");
+    // })
+
+    
   
     return {
       props: {
-       custom_themes
+       custom_themes,
+   
      
       }, 
     }
