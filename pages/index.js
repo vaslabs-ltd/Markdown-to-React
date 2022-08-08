@@ -31,9 +31,10 @@ export default function Home({frontmatter: {name, position, photo}, text_color, 
   return (
     <div >
 
-    <ProfileCard name={name} position={position} bio={text_color} photo={photo} text_color={text_color} background_color={background_color} comp_color={comp_color}/>
-    <ProfileCard name={name} position={position} bio={text_color} photo={photo} text_color={text_color} background_color={background_color} comp_color={comp_color}/>
-    <Feature text_color={text_color} title={name} />
+    <div className='heroContainer'>
+      <h1>Welcome!</h1>
+      <h2>Choose a theme and start your blog!</h2>
+    </div>
 
 
     </div>

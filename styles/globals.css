@@ -1,8 +1,8 @@
 :root {
-  --text_color: blue;
-  --comp_color: blue;
+  --text_color: black;
+  --comp_color: grey;
   --background_color: white;
-  --comp_text_color: black;
+  --comp_text_color: white;
 }
 
 
@@ -37,6 +37,22 @@ a {
   }
 }
 
+.heroContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  height: 80vh;
+}
+
+.heroContainer h1{
+  font-size: 8rem;
+}
+
+.heroContainer h2{
+  font-size: 5rem;
+}
+
 
 .profileContainer, .featureContainer {
   display: flex;
@@ -54,8 +70,11 @@ a {
 
 .themesContainer{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 70vh;
+  place-content: start;
 }
 
 .themesList{

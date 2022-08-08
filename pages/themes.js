@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Themes(custom_themes) {
 
-    const [selected, setSelected] = useState("Light")
+    const [selected, setSelected] = useState(null)
 
     useEffect(() => {
        
@@ -55,6 +55,8 @@ export default function Themes(custom_themes) {
         <div className='themesList'>
             <select name="themes" onChange={(e) => setSelected(e.target.value || null)}
         value={selected || ""}>
+            <option value="" selected disabled hidden>Choose here</option>
+
                 {
                    
                 custom_themes.custom_themes.map((theme, key) => 

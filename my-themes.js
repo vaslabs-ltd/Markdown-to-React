@@ -2,10 +2,10 @@ export const themes = [
 
 {
     theme : "Dark",
-    textColor:"beige",
-    bgColor:"black",
-    componentBg:"white",
-    componentText:"black"
+    textColor:"#EEEEEE",
+    bgColor:"#222831",
+    componentBg:"#393E46",
+    componentText:"#00ADB5"
 },
 
 {
@@ -17,10 +17,10 @@ export const themes = [
 },
 {
     theme : "Hot",
-    textColor:"red",
-    bgColor:"yellow",
-    componentBg:"orange",
-    componentText:"yellow"
+    textColor:"#B83B5E",
+    bgColor:"#F9ED69",
+    componentBg:"#F08A5D",
+    componentText:"#6A2C70"
 },
 
 {
@@ -33,9 +33,9 @@ export const themes = [
 
 {
     theme : "Ocean",
-    textColor:"white",
-    bgColor:"blue",
-    componentBg:"lightblue",
+    textColor:"black",
+    bgColor:"#E3FDFD",
+    componentBg:"#CBF1F5",
     componentText:"navy"
 },
 
