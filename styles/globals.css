@@ -113,6 +113,11 @@ a {
   background-color: transparent;
 }
 
+.chooseThemeContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
 .saveTheme{
   margin-top: 2rem;
   border-radius: 10px;

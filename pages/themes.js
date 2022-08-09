@@ -6,6 +6,11 @@ import { useEffect } from 'react';
 export default function Themes(custom_themes) {
 
     const [selected, setSelected] = useState(null)
+    const [selectedCustom, setSelectedCustom] = useState(null)
+    const [customThemesArray, setCustomThemesArray] = useState(null)
+    const [themesArray,setThemesArray] = useState([]);
+   
+  
 
     useEffect(() => {
        
@@ -44,7 +49,9 @@ export default function Themes(custom_themes) {
           document.documentElement.style.setProperty('--comp_text_color', custom_themes.custom_themes[5].componentText);  
         }           
    
-      },[selected])
+      },[selected]);
+
+    
 
       const handleSave = (e) => {
         e.preventDefault();
@@ -69,8 +76,8 @@ export default function Themes(custom_themes) {
         const selectedComponentColor = componentColorPicker.value;
         const selectedComponentTextColor = compTextColorPicker.value;
 
-        const themesArray = themes;
-        console.log(themesArray);
+       
+   
 
         const customTheme = {
           theme: themeName,
@@ -80,12 +87,38 @@ export default function Themes(custom_themes) {
           componentText: selectedComponentTextColor
         }
         themesArray.push(customTheme);
-        console.log(themesArray);
 
-       
+        const newArray = themesArray;
+        setThemesArray(newArray);
+        
+        setCustomThemesArray(newArray);
+
+      
+
+        console.log(customThemesArray);
+        console.log(selectedCustom);
+        
+
 
 
         }
+
+        useEffect(() => {
+
+          if(customThemesArray != null){
+            customThemesArray.map((entry, key) => {
+              if(selectedCustom == entry.theme){
+                document.documentElement.style.setProperty('--text_color', entry.textColor);
+                document.documentElement.style.setProperty('--comp_color', entry.componentBg);
+                document.documentElement.style.setProperty('--background_color', entry.bgColor);
+                document.documentElement.style.setProperty('--comp_text_color', entry.componentText); 
+              }
+            })
+          }
+
+       
+          
+        }, [selectedCustom]);
         
       
    
@@ -94,32 +127,52 @@ export default function Themes(custom_themes) {
         <div>
             <h1>Choose a Theme</h1>
         </div>
-        <div className='themesList'>
-            <select name="themes" onChange={(e) => setSelected(e.target.value || null)}
-        value={selected || ""}>
-            <option value="" selected disabled hidden>Choose here</option>
+        <div className='chooseThemeContainer'>
+          <div className='themesList'>
+          <h3>Default themes</h3>
+              <select name="themes" onChange={(e) => setSelected(e.target.value || null)}
+          value={selected || ""}>
+              <option value="" selected disabled hidden>Choose here</option>
 
-                {
-                   
-                custom_themes.custom_themes.map((theme, key) => 
-                  <option key={key} value={theme.theme}>{theme.theme}</option>
-                )
+                  {
+                    
+                  custom_themes.custom_themes.map((theme, key) => 
+                    <option key={key} value={theme.theme}>{theme.theme}</option>
+                  )
 
-                
-                }
-            </select>
-          
-        </div>
-        {
-            (selected != null) ?
-                <h2>You have chosen the {selected} theme. Enjoy!</h2> : null
+                  
+                  }
+              </select>
             
-        }
+          </div>
+ 
+          <div className='themesList'>
+          <h3>Your themes</h3>
+              <select name="themes" onChange={(e) => setSelectedCustom(e.target.value || null)}
+          value={selectedCustom || ""}>
+              <option value="" selectedCustom disabled hidden>Choose here</option>
+
+                  {
+                  customThemesArray != null ?  
+                  customThemesArray.map((theme, key) => 
+                    <option key={key} value={theme.theme}>{theme.theme}</option>
+                  )
+                  :
+                  null
+
+                  
+                  }
+              </select>
+            
+          </div>
+ 
+          </div>
+        
 
         <form className='createTheme' onSubmit={handleSave}>
           <h1>Create your own</h1>
           <h2>Enter a name for your theme</h2>
-          <input type="text" className='themeName' id="themeName" placeholder="Enter name..."></input>
+          <input type="text" className='themeName' id="themeName" placeholder="Enter name..." required></input>
           <h2>Choose your preferred colors</h2>
           <div className='chooseProps'>
 
