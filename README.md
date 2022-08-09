@@ -74,7 +74,7 @@ During the implementation so far, I have faced the following problems:
 ## Final functionality additions
 
  - Managed to add a UI component page where the user can select either a predefined theme or a custom theme that he created.
-    - The user's custom themes are saved in React State and when user navigates to another page the state(custom themes) is lost. How to save custom themes? Save the array in a text file?
+    - The user's custom themes are saved in React State and when user navigates to another page the state(custom themes) is lost. How to save custom themes? Save the array in a text file? Maybe with Redux in order to have a global state?
     - Predefined themes are working fine because they are exported from an array in a separate js file.
  - Added Layout component in order to maintain a similar structure to all pages.
 
