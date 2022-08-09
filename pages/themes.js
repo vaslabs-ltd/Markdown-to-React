@@ -71,7 +71,7 @@ export default function Themes(custom_themes) {
         bgColorPicker.addEventListener("change", watchColorPicker, false);
 
 
-          const selectedBgColor = bgColorPicker.value;
+        const selectedBgColor = bgColorPicker.value;
         const selectedTextColor = textColorPicker.value;
         const selectedComponentColor = componentColorPicker.value;
         const selectedComponentTextColor = compTextColorPicker.value;

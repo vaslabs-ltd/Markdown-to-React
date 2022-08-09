@@ -71,6 +71,12 @@ During the implementation so far, I have faced the following problems:
  - Add some kind of restrictions on the values that a user can provide in the CLI. E.g. the color values must be names that are recognizable by CSS and not some custom words like "cucumber green"
  - The user can save a set of given custom styling props as a theme for reusability.
 
+## Final functionality additions
+
+ - Managed to add a UI component page where the user can select either a predefined theme or a custom theme that he created.
+    - The user's custom themes are saved in React State and when user navigates to another page the state(custom themes) is lost. How to save custom themes? Save the array in a text file?
+ - Added Layout component in order to maintain a similar structure to all pages.
+
 
 
 
