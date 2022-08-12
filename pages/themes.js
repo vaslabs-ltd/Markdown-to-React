@@ -192,14 +192,19 @@ export default function Themes(custom_themes) {
               <label htmlFor="componentTextColor">Choose component text color:</label>
               <input type="color" id="componentTextColor"  />
             </div>
+            {/* <div className='chooseColor'>
+              <label htmlFor="fontSize">Choose font size:</label>
+              <select name="fontSize" className='fontSize'>
+                <option value="12px">12px</option>
+                <option value="16px">16px</option>
+                <option value="20px">20px</option>
+                <option value="24px">24px</option>
+              </select>
+            </div> */}
           </div>
           <button className='saveTheme' type='submit' value="Submit">Save theme</button>
         </form>
 
-
-
-        {/* onclick will trigger function that will save given inputs to the mythemes.js file. input will be saved as an object in the array. will use writefile method of node in order to write in the file */}
-     
     </div>
   )
 
