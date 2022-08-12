@@ -8,11 +8,12 @@ export default function Footer() {
                 Contact Us:
             </p>
             <p>
-                anemailaddress@gmail.com
+                
             </p>
         </div>
         <div>
             <p>Designed & Developed by George Onisiforou</p>
+            <p>VasLabs LTD</p>
         </div>
     </div>
   )

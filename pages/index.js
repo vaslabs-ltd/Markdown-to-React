@@ -26,8 +26,6 @@ export default function Home({frontmatter: {name, position, photo}, text_color, 
 
 
 
-
-
   return (
     <div >
 

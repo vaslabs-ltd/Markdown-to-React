@@ -28,6 +28,7 @@ export default function CustomProps({text_color, background_color, comp_color, c
 
 
 
+
 export async function getStaticProps() {
 
 
